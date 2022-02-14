@@ -1,7 +1,7 @@
 ﻿using Application.Contracts;
 using Application.Dto;
-using Application.Exceptions;
 using Domain.Entities;
+using Domain.Exceptions;
 using Domain.Repositories;
 
 namespace Application.Services

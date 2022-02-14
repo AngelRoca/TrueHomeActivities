@@ -1,8 +1,8 @@
 ﻿using Application.Dto;
-using Application.Exceptions;
 using Application.Services;
 using AutoFixture;
 using Domain.Entities;
+using Domain.Exceptions;
 using Domain.Repositories;
 using NSubstitute;
 using System.Threading.Tasks;

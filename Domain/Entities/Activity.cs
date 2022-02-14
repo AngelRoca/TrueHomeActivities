@@ -1,4 +1,6 @@
-﻿namespace Domain.Entities
+﻿using Domain.Exceptions;
+
+namespace Domain.Entities
 {
     public class Activity
     {
@@ -15,6 +17,21 @@
         public DateTime UpdatedAt { get; set; }
 
         public ActivityStatus Status { get; set; }
+
+        public void Cancel()
+        {
+            Status = ActivityStatus.Cancelled;
+        }
+
+        public void ReSchedule(DateTime newSchedule)
+        {
+            if (Status == ActivityStatus.Cancelled)
+            {
+                throw new CancelledActivityReScheduleException();
+            }
+
+            Schedule = newSchedule;
+        }
     }
 
     public enum ActivityStatus

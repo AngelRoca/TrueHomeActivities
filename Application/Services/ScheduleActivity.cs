@@ -32,7 +32,7 @@ namespace Application.Services
                 Success = true
             };
 
-            return await Task.FromResult(response);
+            return response;
         }
 
         private async Task ValidatePropertyDisabled(ScheduleActivityRequest request)

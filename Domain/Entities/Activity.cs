@@ -18,6 +18,8 @@ namespace Domain.Entities
 
         public ActivityStatus Status { get; set; }
 
+        public Property Property { get; set; }
+
         public void Cancel()
         {
             Status = ActivityStatus.Cancelled;
@@ -37,6 +39,7 @@ namespace Domain.Entities
     public enum ActivityStatus
     {
         Cancelled,
-        Active
+        Active,
+        Done
     }
 }

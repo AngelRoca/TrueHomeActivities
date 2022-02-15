@@ -1,4 +1,5 @@
 ﻿using Domain.Entities;
+using System.Linq.Expressions;
 
 namespace Domain.Repositories
 {
@@ -11,5 +12,7 @@ namespace Domain.Repositories
         Task<Activity> FindByIdAsync(Guid activityId);
 
         Task<Activity> UpdateAsync(Activity activity);
+
+        Task<IEnumerable<Activity>> FindAllByPredicateAsync(Expression<Func<Activity, bool>> predicate);
     }
 }

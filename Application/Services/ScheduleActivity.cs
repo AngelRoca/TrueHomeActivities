@@ -49,8 +49,6 @@ namespace Application.Services
         {
             var activities = await _activitiesRepo.FindAllByPropertyIdAsync(request.PropertyId);
 
-            var aux = request.Schedule.Date;
-
             var sameTimeActivity = activities.Any(a =>
                 a.PropertyId.Equals(request.PropertyId) &&
                 a.Schedule.Year == request.Schedule.Year &&

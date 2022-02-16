@@ -15,5 +15,7 @@
         public string Condition { get; set; }
 
         public PropertyItem Property { get; set; }
+
+        public string SurveyUrl { get; set; }
     }
 }

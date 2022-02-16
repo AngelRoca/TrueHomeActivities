@@ -1,4 +1,4 @@
-namespace TrueHomeActivities
+namespace TrueHomeActivities.Api
 {
     public class WeatherForecast
     {

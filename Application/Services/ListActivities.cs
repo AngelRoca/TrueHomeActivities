@@ -17,7 +17,7 @@ namespace Application.Services
 
         public async Task<IEnumerable<ActivityItem>> GetListAsync(ListActiviesRequest request)
         {
-            IListActivityFilter filter = ListActivityFilterFactory.GetFilter(request);
+            var filter = ListActivityFilterFactory.GetFilter(request);
 
             var activities = await _activitiesRepo.FindAllByPredicateAsync(filter.Predicate);
 
@@ -34,6 +34,7 @@ namespace Application.Services
                 Status = activity.Status.ToString(),
                 Condition = EvaluateCondition(activity),
                 CreatedAt = activity.CreatedAt,
+                SurveyUrl = "/url",
                 Property = new PropertyItem()
                 {
                     ID = activity.PropertyId.ToString(),

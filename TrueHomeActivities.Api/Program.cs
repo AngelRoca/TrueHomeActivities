@@ -10,7 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllers(o =>
-    o.Filters.Add(new ExceptionFilterAsync())
+    o.Filters.Add(new ExceptionFilter())
 );
 
 builder.Services.AddDbContext<TrueHomeDataContext>(options =>

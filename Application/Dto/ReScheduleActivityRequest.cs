@@ -4,6 +4,6 @@
     {
         public Guid ActivityId { get; set; }
 
-        public DateTime NewSchedule { get; set; }
+        public DateTimeOffset NewSchedule { get; set; }
     }
 }

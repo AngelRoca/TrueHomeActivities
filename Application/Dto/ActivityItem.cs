@@ -4,11 +4,11 @@
     {
         public String ID { get; set; }
 
-        public DateTime Schedule { get; set; }
+        public DateTimeOffset Schedule { get; set; }
 
         public String Title { get; set; }
 
-        public DateTime CreatedAt { get; set; }
+        public DateTimeOffset CreatedAt { get; set; }
 
         public string Status { get; set; }
 

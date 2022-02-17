@@ -8,13 +8,13 @@ namespace Domain.Entities
 
         public Guid PropertyId { get; set; }
 
-        public DateTime Schedule { get; set; }
+        public DateTimeOffset Schedule { get; set; }
 
         public string Title { get; set; }
 
-        public DateTime CreatedAt { get; set; }
+        public DateTimeOffset CreatedAt { get; set; }
 
-        public DateTime UpdatedAt { get; set; }
+        public DateTimeOffset UpdatedAt { get; set; }
 
         public ActivityStatus Status { get; set; }
 
@@ -25,7 +25,7 @@ namespace Domain.Entities
             Status = ActivityStatus.Cancelled;
         }
 
-        public void ReSchedule(DateTime newSchedule)
+        public void ReSchedule(DateTimeOffset newSchedule)
         {
             if (Status == ActivityStatus.Cancelled)
             {

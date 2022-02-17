@@ -8,11 +8,11 @@
 
         public string Address { get; set; }
 
-        public DateTime CreatedAt { get; set; }
+        public DateTimeOffset CreatedAt { get; set; }
 
-        public DateTime UpdatedAt { get; set; }
+        public DateTimeOffset UpdatedAt { get; set; }
 
-        public DateTime? DisabledAt { get; set; }
+        public DateTimeOffset? DisabledAt { get; set; }
 
         public PropertyStatus Status { get; set; }
     }

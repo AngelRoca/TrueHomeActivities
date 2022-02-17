@@ -13,6 +13,12 @@ namespace Infrastructure.RepositoriesPostgreEF
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.UseSerialColumns();
+
+            modelBuilder.Entity<Activity>()
+                .ToTable("Activity");
+
+            modelBuilder.Entity<Property>()
+                .ToTable("Property");
         }
 
         public DbSet<Activity> Activities { get; set; }

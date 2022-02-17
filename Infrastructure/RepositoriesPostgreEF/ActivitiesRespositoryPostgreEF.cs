@@ -16,7 +16,11 @@ namespace Infrastructure.RepositoriesPostgreEF
 
         public async Task<IEnumerable<Activity>> FindAllByPredicateAsync(Expression<Func<Activity, bool>> predicate)
         {
-            return await _dbContext.Activities.Where(predicate).ToListAsync();
+            return await _dbContext
+                .Activities
+                .Include(a => a.Property)
+                .Where(predicate)
+                .ToListAsync();
         }
 
         public async Task<IEnumerable<Activity>> FindAllByPropertyIdAsync(Guid propertyId)

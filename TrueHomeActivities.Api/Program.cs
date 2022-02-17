@@ -3,15 +3,19 @@ using Application.Services;
 using Domain.Repositories;
 using Infrastructure.RepositoriesPostgreEF;
 using Microsoft.EntityFrameworkCore;
+using TrueHomeActivities.Api.Filters;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers();
+builder.Services.AddControllers(o =>
+    o.Filters.Add(new ExceptionFilterAsync())
+);
 
 builder.Services.AddDbContext<TrueHomeDataContext>(options =>
-    options.UseNpgsql(builder.Configuration.GetConnectionString("TrueHomeDB"))
+    options
+    .UseNpgsql(builder.Configuration.GetConnectionString("TrueHomeDB"))
 );
 
 builder.Services.AddTransient<IPropertiesRespository, PropertiesRespositoryPostgreEF>();

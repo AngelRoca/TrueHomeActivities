@@ -20,7 +20,7 @@ namespace TrueHomeActivities.Api.Filters
                 exception is OtherActivityAtTheSameTimeException ||
                 exception is CancelledActivityReScheduleException)
             {
-                jsonResult.StatusCode = (int)HttpStatusCode.Forbidden;
+                jsonResult.StatusCode = (int)HttpStatusCode.BadRequest;
             }
 
             context.Result = jsonResult;

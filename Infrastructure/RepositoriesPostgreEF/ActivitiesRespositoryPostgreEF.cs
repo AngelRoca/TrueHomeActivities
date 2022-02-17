@@ -35,6 +35,9 @@ namespace Infrastructure.RepositoriesPostgreEF
 
         public async Task<Activity> InsertAsync(Activity activity)
         {
+            activity.CreatedAt = DateTimeOffset.Now;
+            activity.UpdatedAt = DateTimeOffset.Now;
+
             await _dbContext.Activities.AddAsync(activity);
             int result = await _dbContext.SaveChangesAsync();
 
@@ -48,6 +51,8 @@ namespace Infrastructure.RepositoriesPostgreEF
 
         public async Task<Activity> UpdateAsync(Activity activity)
         {
+            activity.UpdatedAt = DateTimeOffset.Now;
+
             int result = await _dbContext.SaveChangesAsync();
 
             if (result > 0)

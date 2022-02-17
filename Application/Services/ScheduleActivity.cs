@@ -71,9 +71,7 @@ namespace Application.Services
                 PropertyId = request.PropertyId,
                 Title = request.Title,
                 Schedule = request.Schedule,
-                Status = ActivityStatus.Active,
-                CreatedAt = DateTime.UtcNow,
-                UpdatedAt = DateTime.UtcNow
+                Status = ActivityStatus.Active
             };
         }
     }

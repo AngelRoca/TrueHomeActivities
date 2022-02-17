@@ -37,7 +37,7 @@ namespace TrueHomeActivities.Tests
             // When
             ICancelActivity sut = new CancelActivity(activitiesRepo);
 
-            var _ = await sut.Cancel(request);
+            var _ = await sut.CancelAsync(request);
 
             // Then
             await activitiesRepo

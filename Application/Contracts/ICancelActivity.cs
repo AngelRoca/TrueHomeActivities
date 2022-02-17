@@ -4,6 +4,6 @@ namespace Application.Contracts
 {
     public interface ICancelActivity
     {
-        Task<CancelActivityResponse> Cancel(CancelActivityRequest activity);
+        Task<CancelActivityResponse> CancelAsync(CancelActivityRequest activity);
     }
 }

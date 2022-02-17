@@ -13,7 +13,7 @@ namespace Application.Services
             _activitiesRepo = activitiesRepo;
         }
 
-        public async Task<CancelActivityResponse> Cancel(CancelActivityRequest request)
+        public async Task<CancelActivityResponse> CancelAsync(CancelActivityRequest request)
         {
             var activity = await _activitiesRepo.FindByIdAsync(request.ActivityId);
 
